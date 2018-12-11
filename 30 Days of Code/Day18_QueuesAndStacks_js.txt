@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671
+{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue254;\red144\green1\blue18;
+\red0\green0\blue255;\red19\green120\blue72;\red14\green110\blue109;\red15\green112\blue1;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c99608;\cssrgb\c63922\c8235\c8235;
+\cssrgb\c0\c0\c100000;\cssrgb\c3529\c53333\c35294;\cssrgb\c0\c50196\c50196;\cssrgb\c0\c50196\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl460\partightenfactor0
+
+\f0\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 process.stdin.resume();\cb1 \
+\cb3 process.stdin.setEncoding(\cf4 \strokec4 'ascii'\cf2 \strokec2 );\cb1 \
+\
+\pard\pardeftab720\sl460\partightenfactor0
+\cf5 \cb3 \strokec5 var\cf2 \strokec2  input_stdin = \cf4 \strokec4 ""\cf2 \strokec2 ;\cb1 \
+\cf5 \cb3 \strokec5 var\cf2 \strokec2  input_stdin_array = \cf4 \strokec4 ""\cf2 \strokec2 ;\cb1 \
+\cf5 \cb3 \strokec5 var\cf2 \strokec2  input_currentline = \cf6 \strokec6 0\cf2 \strokec2 ;\cb1 \
+\
+\pard\pardeftab720\sl460\partightenfactor0
+\cf2 \cb3 process.stdin.on(\cf4 \strokec4 'data'\cf2 \strokec2 , \cf5 \strokec5 function\cf2 \strokec2  (data) \{\cb1 \
+\cb3     input_stdin += data;\cb1 \
+\cb3 \});\cb1 \
+\
+\cb3 process.stdin.on(\cf4 \strokec4 'end'\cf2 \strokec2 , \cf5 \strokec5 function\cf2 \strokec2  () \{\cb1 \
+\cb3     input_stdin_array = input_stdin.split(\cf4 \strokec4 "\\n"\cf2 \strokec2 );\cb1 \
+\cb3     main();    \cb1 \
+\cb3 \});\cb1 \
+\pard\pardeftab720\sl460\partightenfactor0
+\cf5 \cb3 \strokec5 function\cf2 \strokec2  readLine() \{\cb1 \
+\pard\pardeftab720\sl460\partightenfactor0
+\cf2 \cb3     \cf5 \strokec5 return\cf2 \strokec2  input_stdin_array[input_currentline++];\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\sl460\partightenfactor0
+\cf5 \cb3 \strokec5 function\cf2 \strokec2  \cf7 \strokec7 Solution\cf2 \strokec2 ()\{\cb1 \
+\pard\pardeftab720\sl460\partightenfactor0
+\cf2 \cb3   \cf8 \strokec8 //Write your code here\cf2 \cb1 \strokec2 \
+\cb3     \cf5 \strokec5 this\cf2 \strokec2 .stack = [];\cb1 \
+\cb3     \cf5 \strokec5 this\cf2 \strokec2 .queue = [];\cb1 \
+\
+\cb3     \cf5 \strokec5 this\cf2 \strokec2 .pushCharacter = \cf5 \strokec5 function\cf2 \strokec2  (ch) \{\cb1 \
+\cb3         \cf5 \strokec5 this\cf2 \strokec2 .stack.push(ch);\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf5 \strokec5 this\cf2 \strokec2 .enqueueCharacter = \cf5 \strokec5 function\cf2 \strokec2  (ch) \{\cb1 \
+\cb3         \cf5 \strokec5 this\cf2 \strokec2 .queue.push(ch);\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf5 \strokec5 this\cf2 \strokec2 .popCharacter = \cf5 \strokec5 function\cf2 \strokec2  () \{\cb1 \
+\cb3         \cf5 \strokec5 return\cf2 \strokec2  \cf5 \strokec5 this\cf2 \strokec2 .stack.pop();\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf5 \strokec5 this\cf2 \strokec2 .dequeueCharacter = \cf5 \strokec5 function\cf2 \strokec2  () \{\cb1 \
+\cb3         \cf5 \strokec5 return\cf2 \strokec2  \cf5 \strokec5 this\cf2 \strokec2 .queue.shift();\cb1 \
+\cb3     \} \cb1 \
+\cb3   \}\cb1 \
+\
+\pard\pardeftab720\sl460\partightenfactor0
+\cf5 \cb3 \strokec5 function\cf2 \strokec2  main()\{\cb1 \
+\pard\pardeftab720\sl460\partightenfactor0
+\cf2 \cb3     \cf8 \strokec8 // read the string s\cf2 \cb1 \strokec2 \
+\cb3     \cf5 \strokec5 var\cf2 \strokec2  s=readLine();\cb1 \
+\cb3     \cf5 \strokec5 var\cf2 \strokec2  len=s.length;\cb1 \
+\cb3     \cf8 \strokec8 // create the Solution class object p\cf2 \cb1 \strokec2 \
+\cb3     \cf5 \strokec5 var\cf2 \strokec2  obj=\cf5 \strokec5 new\cf2 \strokec2  \cf7 \strokec7 Solution\cf2 \strokec2 ();\cb1 \
+\cb3     \cf8 \strokec8 //push/enqueue all the characters of string s to stack\cf2 \cb1 \strokec2 \
+\cb3     \cf5 \strokec5 for\cf2 \strokec2 (\cf5 \strokec5 var\cf2 \strokec2  i=\cf6 \strokec6 0\cf2 \strokec2 ;i<len;i++)\{\cb1 \
+\cb3         obj.pushCharacter(s.charAt(i));\cb1 \
+\cb3         obj.enqueueCharacter(s.charAt(i));\cb1 \
+\cb3     \}\cb1 \
+\cb3   \cb1 \
+\cb3     \cf5 \strokec5 var\cf2 \strokec2  isPalindrome=\cf5 \strokec5 true\cf2 \strokec2 ;\cb1 \
+\cb3     \cf8 \strokec8 /*\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\sl460\partightenfactor0
+\cf8 \cb3 \strokec8     pop the top character from stack\cf2 \cb1 \strokec2 \
+\cf8 \cb3 \strokec8     dequeue the first character from queue\cf2 \cb1 \strokec2 \
+\cf8 \cb3 \strokec8     compare both the characters*/\cf2 \cb1 \strokec2 \
+\
+\pard\pardeftab720\sl460\partightenfactor0
+\cf2 \cb3     \cf5 \strokec5 for\cf2 \strokec2 (\cf5 \strokec5 var\cf2 \strokec2  i=\cf6 \strokec6 0\cf2 \strokec2 ;i<len/\cf6 \strokec6 2\cf2 \strokec2 ;i++)\{\cb1 \
+\cb3         \cf5 \strokec5 if\cf2 \strokec2 (obj.popCharacter()!=obj.dequeueCharacter())\{\cb1 \
+\cb3             isPalindrome=\cf5 \strokec5 false\cf2 \strokec2 ;\cb1 \
+\cb3           \'a0\'a0\cf5 \strokec5 break\cf2 \strokec2 ;\cb1 \
+\cb3         \}\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf8 \strokec8 //finally print whether string s is palindrome or not\cf2 \cb1 \strokec2 \
+\
+\cb3     \cf5 \strokec5 if\cf2 \strokec2 (isPalindrome)\cb1 \
+\cb3         console.log(\cf4 \strokec4 "The word, "\cf2 \strokec2 +s+\cf4 \strokec4 ", is a palindrome."\cf2 \strokec2 );    \cb1 \
+\cb3     \cf5 \strokec5 else\cf2 \cb1 \strokec2 \
+\cb3         console.log(\cf4 \strokec4 "The word, "\cf2 \strokec2 +s+\cf4 \strokec4 ", is not a palindrome."\cf2 \strokec2 );\cb1 \
+\cb3 \}}
